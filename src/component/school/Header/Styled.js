@@ -85,4 +85,8 @@ export const IconBox = styled.div`
     align-items: center;
     font-weight: bold;
   }
+  a{
+      text-decoration: none;
+      color: #000000;
+    }
 `;

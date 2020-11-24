@@ -52,7 +52,7 @@ const Main = () => {
               <span>광주SW마이스터고</span>
             </div>
             <Link to="/school:gsm">
-            <button>방문하기</button>
+              <button>방문하기</button>
             </Link>
           </div>
           <div className="choiceBox dsm">
@@ -63,7 +63,7 @@ const Main = () => {
               <span>대덕SW마이스터고</span>
             </div>
             <Link to="/school:dsm">
-            <button>방문하기</button>
+              <button>방문하기</button>
             </Link>
           </div>
           <div className="choiceBox dgsm">
@@ -74,7 +74,7 @@ const Main = () => {
               <span>대구SW마이스터고</span>
             </div>
             <Link to="/school:dgsm">
-            <button>방문하기</button>
+              <button>방문하기</button>
             </Link>
           </div>
         </div>

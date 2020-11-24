@@ -10,6 +10,9 @@ export const Overlay = styled.div`
   z-index: 1000;
 `;
 export const Container = styled.div`
+  box-sizing: border-box;
+  padding: 30px 0;
+
   position: fixed;
   z-index: 9999;
   width: 1000px;
@@ -47,4 +50,10 @@ export const Content = styled.textarea`
 export const SubmitButton = styled.button`
   width: 300px;
   height: 80px;
+  background-color: #0e7be0;
+  border-radius: 30px;
+  font-weight: 500;
+  font-size: 30px;
+  border: none;
+  color: white;
 `;
