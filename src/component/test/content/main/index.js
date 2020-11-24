@@ -5,7 +5,7 @@ import {Global,Section} from './style';
 const Main = () => {
     return (
         <section>
-            
+            <div>hello</div>
         </section>
     )
 }

@@ -14,6 +14,7 @@ const Test = () => {
     const [counter,setCounter]=useState(0);
     const counterArrey = ['첫','두','세','네','다'];
     const [data,setData]=useState(json_date);
+    const[visible,setVisible]=useState(false);
 
     const rand_question = () => {
         const rand = Math.random() * data.length-1;
@@ -22,24 +23,43 @@ const Test = () => {
         const tmp=data.filter((e,i)=>{if(i !== randInt)return e;});
         setData(tmp);
     };
+    const [result,setResult] = useState('');
+            useEffect(() => {
+            switch(score){
+                case 0:
+                case 1:
+                    setResult('프알못');
+                    break;
+                case 2:
+                case 3:
+                    setResult('프린이');
+                    break;
+                case 4:
+                case 5:
+                setResult('천성적인 개발자');
+                break;
+            default:
+        }
+    },[])
     const onclick = (e) => {
         if(e.target.id == question.index){
-            setscore(score+1);
+            setscore(score);
             console.log(score);
         }
         rand_question();
         setCounter(counter+1);
-        if(counter > 3){
+        if(counter > 4){
             console.log('end');
-            history.push({pathname:'/last', state:{score:score}})
+            alert(result);
             return;
+            window.history.back();
         }
     }
     useEffect(()=>{rand_question();},[]);
 
     const cssonclick = () => {
-        var hel = document.querySelectorAll('.colorPicker');
-        document.hel.style.display = 'none';
+        setCounter(counter+1);
+        setVisible(true)
     }
 
     return (
@@ -59,7 +79,7 @@ const Test = () => {
             </Bycicle>
         </Choice>
         <div class="box"></div>
-        <Frist_text className="colorPicker">
+        {visible|| <Frist_text className="colorPicker">
             <div>
                 <img src={programming}></img>
             </div>
@@ -72,14 +92,15 @@ const Test = () => {
             <div class="start" onClick={cssonclick}>
                 <span class="text1">시작하기</span>
             </div>
-        </Frist_text>
+        </Frist_text>}
+       
     </FristPage>
     
-    <AllPage>
+   {visible&& <AllPage>
         <section className="inner">
             <Title>
                 {/* 질문 순번, 질문 내역 */}
-                <p className="revised">0{counter+1}</p>
+                <p className="revised">0{counter}</p>
                 <p className="question">{question&& question.question}</p>
             </Title>
             {/* 질문 선택 바 */}
@@ -93,7 +114,7 @@ const Test = () => {
             </Content>
             {/* 게이지 */}
         </section>
-    </AllPage>
+    </AllPage>}
     </>
         
     )

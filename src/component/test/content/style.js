@@ -14,7 +14,7 @@ export const Global = createGlobalStyle
 }
 `
 export const AllPage = styled.section`
-    display:none;
+    display:block;
 `
 export const FristPage = styled.section`
     .box{
@@ -80,7 +80,7 @@ export const Footer = styled.section`
     }
 `
 export const GageBar = styled.div`
-    width: ${pros=>pros.width===0?0:(pros.width+1)*130}px;
+    width: ${pros=>pros.width===0?0:(pros.width)*130}px;
     height: 30px;
     border-radius: 100px;
     position: absolute;
@@ -93,7 +93,7 @@ export const GageBar = styled.div`
 export const Bycicle = styled.div`
     background-image: url('./img/bycicle.png');
     img {
-        margin-left: ${pros=>pros.width===0?620:(pros.width)*130+750}px;
+        margin-left: ${pros=>pros.width===0?620:(pros.width-1)*130+750}px;
         width: 72px;
         height: 72px;
         position: absolute;
@@ -104,7 +104,7 @@ export const Bycicle = styled.div`
 
 export const Background = styled.div`
     img {
-        margin-left: -${pros=>pros.width===0?0:(pros.width)*1920}px;
+        margin-left: -${pros=>pros.width===0?0:(pros.width)*1800}px;
         z-index: -1;
         position: absolute;
         transition-duration: 1s;
