@@ -8,6 +8,8 @@ import post from "../../../img/bamboo.png";
 
 const Header = () => {
   const [isLogin, setIsLogin] = useState(false);
+  let pathname = window.location.pathname;
+  console.log('pathname', pathname);
   return (
     <HeaderWrapper>
       <LogoBox>
@@ -20,15 +22,15 @@ const Header = () => {
         </div>
         <div className='club'>
           <img src={club} />
-          <span>학교소개</span>
+          <span>동아리 소개</span>
         </div>
         <div className='QnA'>
           <img src={QnA} />
-          <span>학교소개</span>
+          <span>Q&A</span>
         </div>
         <div className='post'>
           <img src={post} />
-          <span>학교소개</span>
+          <span>대나무 숲</span>
         </div>
       </IconBox>
       <div className="btnBox">
