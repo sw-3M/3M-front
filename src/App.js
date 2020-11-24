@@ -8,6 +8,7 @@ function App() {
     <Router>
       <Global />
       <Switch>
+        <Route path="/intro" component={components.Intro} />
         <Route path='/login' component={components.Login} />
         <Route path='/signup' component={components.Signup} />
         <Route exact path='/' component={components.Main} />
