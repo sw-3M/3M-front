@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { MainWrapper, MainHeader, MainContent } from "./Styled";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import mainlogo from "../../../img/logo_1.png";
 import test from "../../../img/test.png";
 import gsmLogo from "../../../img/gsm_logo.png";
@@ -15,13 +15,25 @@ const Main = () => {
   const clickToLogin = () => {
     history.push({ pathname: "/login" });
   };
+  const clickToLogout = () => {
+    localStorage.removeItem("token");
+    window.location.reload();
+  };
   return (
     <MainWrapper>
       <MainHeader>
+        <div className="left"></div>
         <div className="center">
           <img src={mainlogo} className="logo"></img>
         </div>
-        {isLoggedIn || (
+        {isLoggedIn ? (
+          <div className="right">
+            <img src={test} className="test" />
+            <div className="btnBox">
+              <button onClick={clickToLogout}>Logout</button>
+            </div>
+          </div>
+        ) : (
           <div className="right">
             <img src={test} className="test" />
             <div className="btnBox">
@@ -39,7 +51,9 @@ const Main = () => {
               </div>
               <span>광주SW마이스터고</span>
             </div>
-            <button>방문하기</button>
+            <Link to="/school:gsm">
+              <button>방문하기</button>
+            </Link>
           </div>
           <div className="choiceBox dsm">
             <div className="schoolBox">
@@ -48,7 +62,9 @@ const Main = () => {
               </div>
               <span>대덕SW마이스터고</span>
             </div>
-            <button>방문하기</button>
+            <Link to="/school:dsm">
+              <button>방문하기</button>
+            </Link>
           </div>
           <div className="choiceBox dgsm">
             <div className="schoolBox">
@@ -57,7 +73,9 @@ const Main = () => {
               </div>
               <span>대구SW마이스터고</span>
             </div>
-            <button>방문하기</button>
+            <Link to="/school:dgsm">
+              <button>방문하기</button>
+            </Link>
           </div>
         </div>
       </MainContent>
