@@ -1,5 +1,5 @@
-const LOGIN = "/login";
-const SIGNUP = "/signup";
+const LOGIN = "/api/auth/login";
+const SIGNUP = "/api/auth/sign-up";
 
 const urls = {
   LOGIN,
