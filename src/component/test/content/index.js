@@ -3,12 +3,15 @@ import json_date from './date.json';
 import './reset.css';
 import {Global,Content,Title,Choice,Footer,GageBar} from './style';
 import imgA from './rocket.png';
+import {useHistory} from 'react-router-dom';
 const Test = () => {
+    const history = useHistory();
     const [score, setscore]=useState(0);
     const [question,setQuesetion]=useState();
     const [counter,setCounter]=useState(0);
     const counterArrey = ['첫','두','세','네','다'];
     const [data,setData]=useState(json_date);
+
     const rand_question = () => {
         const rand = Math.random() * data.length-1;
         const randInt = parseInt(rand);
@@ -26,17 +29,17 @@ const Test = () => {
         // }
     };
     const onclick = (e) => {
-        console.log(e.target.id);
-        if(counter > 3){
-            console.log(score);
-            return;
-        }
-        if(e.target.id === question.index){
+        if(e.target.id == question.index){
             setscore(score+1);
-            console.log("Hello!");
+            console.log(score);
         }
         rand_question();
         setCounter(counter+1);
+        if(counter > 3){
+            console.log('end');
+            history.push({pathname:'/last', state:{score:score}})
+            return;
+        }
     }
     useEffect(()=>{rand_question();},[]);
 

@@ -17,7 +17,7 @@
     {
         "question" : "Life is short, you need ()에 들어갈 프로그래밍 언어는?",
         "choice": ["Javascript","Python"],
-        "index" : "0"
+        "index" : "1"
     },
     {
         "question" : "빌 게이츠가 부드러운걸 만드는 도구는?",
