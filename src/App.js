@@ -12,6 +12,7 @@ function App() {
         <Route path="/signup" component={components.Signup} />
         <Route path="/main" component={components.Main} />
         <Route path="/anonymous" component={components.Anonymous} />
+        <Route path="/intro" component={components.Intro} />
       </Switch>
     </Router>
   );
