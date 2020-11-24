@@ -25,8 +25,7 @@ const Write = ({ setVisible }) => {
         urls.BAMBOOWRITE + "?school_name=대덕소프트웨어마이스터고등학굔",
         data
       )
-      .then(alert("글을 성공적으로 게시하였습니다"))
-      .catch(alert("오류"));
+      .then(setVisible(false));
   };
   return (
     <>
