@@ -15,6 +15,10 @@ const Main = () => {
   const clickToLogin = () => {
     history.push({ pathname: "/login" });
   };
+  const clickToLogout = () => {
+    localStorage.removeItem("token");
+    window.location.reload();
+  };
   return (
     <MainWrapper>
       <MainHeader>
@@ -22,7 +26,14 @@ const Main = () => {
         <div className="center">
           <img src={mainlogo} className="logo"></img>
         </div>
-        {isLoggedIn || (
+        {isLoggedIn ? (
+          <div className="right">
+            <img src={test} className="test" />
+            <div className="btnBox">
+              <button onClick={clickToLogout}>Logout</button>
+            </div>
+          </div>
+        ) : (
           <div className="right">
             <img src={test} className="test" />
             <div className="btnBox">
