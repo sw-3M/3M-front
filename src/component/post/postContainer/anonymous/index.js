@@ -11,19 +11,38 @@ import background from "../../../../img/background.png";
 import Write from "./write";
 import urls from "../../../../api/urls";
 import Post from "./post";
+import { useLocation } from "react-router-dom";
 
 import client from "../../../../api";
 const Anonymous = () => {
   const [data, setData] = useState([]);
   const [visible, setVisible] = useState(false);
+  const [pathName, setPathName] = useState("");
+  const location = useLocation();
 
   useEffect(() => {
-    client
-      .get(urls.BAMBOO_LIST + "?school_name=대덕소프트웨어마이스터고등학교")
-      .then((res) => {
-        setData(res.data.reverse());
-      });
+    console.log(location.state.params);
+    switch (location.state.params) {
+      case "/school:dsm":
+        setPathName("대덕소프트웨어마이스터고등학교");
+        break;
+      case "/school:gsm":
+        setPathName("광주소프트웨어마이스터고등학교");
+        break;
+      case "/school:dgsm":
+        setPathName("대구소프트웨어마이스터고등학교");
+        break;
+      default:
+        break;
+    }
   }, []);
+
+  useEffect(() => {
+    console.log(pathName);
+    client.get(urls.BAMBOO_LIST + `?school_name=${pathName}`).then((res) => {
+      setData(res.data.reverse());
+    });
+  }, [pathName]);
 
   return (
     <>

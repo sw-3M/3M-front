@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { HeaderWrapper, LogoBox, IconBox } from "./Styled";
+import { useHistory } from "react-router-dom";
 import logo from "../../../img/logo_1.png";
 import school from "../../../img/university.png";
 import club from "../../../img/poker-chip.png";
