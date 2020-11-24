@@ -34,27 +34,26 @@ const Login = () => {
     <>
       <Background src={bg} />
       <Overlay />
-      <LoginContainer src={loginContainer}>
-        <LoginForm className="container nanumsquare">
-          <InputLabel
-            className="email"
-            type="text"
-            placeholder="EMAIL"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <InputLabel
-            type="password"
-            placeholder="PASSWORD"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <LoginButton onClick={onSubmit}>LOGIN</LoginButton>
-          <ToSingup to="/signup">
-            아직 회원이 아니신가요? 회원 가입 하러가기
-          </ToSingup>
-        </LoginForm>
-      </LoginContainer>
+      <LoginContainer src={loginContainer} />
+      <LoginForm className="container nanumsquare">
+        <InputLabel
+          className="email"
+          type="text"
+          placeholder="EMAIL"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <InputLabel
+          type="password"
+          placeholder="PASSWORD"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <LoginButton onClick={onSubmit}>LOGIN</LoginButton>
+        <ToSingup to="/signup">
+          아직 회원이 아니신가요? 회원 가입 하러가기
+        </ToSingup>
+      </LoginForm>
     </>
   );
 };

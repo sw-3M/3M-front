@@ -1,11 +1,16 @@
 import React, { useState } from "react";
-import "./style.scss";
 import client from "../../../../api";
 import urls from "../../../../api/urls";
+import {
+  Background,
+  Container,
+  SingupFrom,
+  InputLabel,
+  SingupButton,
+} from "./style";
+import background from "../../../../image/signupContainer.png";
 
 const Signup = () => {
-  const [file, setFile] = useState();
-  const [fileResult, setFileResult] = useState();
   const [email, setEmail] = useState();
   const [userName, setUserName] = useState();
   const [phone, setPhone] = useState();
@@ -23,72 +28,61 @@ const Signup = () => {
     data.append("password", password);
     if (kakao) data.append("kakao", kakao);
     if (facebook) data.append("facebook", facebook);
-    if (file) data.append("image", file);
 
     client.post(urls.SIGNUP, data).then(console.log).catch(console.log);
   };
 
-  const uploadImage = (e) => {
-    const reader = new FileReader();
-    reader.readAsDataURL(e.target.files[0]);
-    setFile(e.target.files[0]);
-    reader.onload = () => {
-      setFileResult(reader.result);
-    };
-
-    console.log(file);
-  };
-
   return (
-    <form>
-      <img src={fileResult} style={{ width: "30px", height: "30px" }} />
-      <input type="file" accept="image/*" files={file} onChange={uploadImage} />
-      <input
-        className="email"
-        type="email"
-        placeholder="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <input
-        className="useName"
-        type="text"
-        placeholder="name"
-        value={userName}
-        onChange={(e) => setUserName(e.target.value)}
-      />
-      <input
-        className="password"
-        type="password"
-        placeholder="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <input
-        className="phone"
-        type="tel"
-        placeholder="phoneNum"
-        value={phone}
-        onChange={(e) => setPhone(e.target.value)}
-      />
-      <input
-        className="kakao"
-        type="text"
-        placeholder="kakao Id"
-        value={kakao}
-        onChange={(e) => setKakao(e.target.value)}
-      />
-      <input
-        className="facebook"
-        type="text"
-        placeholder="facebook"
-        value={facebook}
-        onChange={(e) => setFaceBook(e.target.value)}
-      />
-      <button type="submit" onClick={onSubmit}>
-        로그인
-      </button>
-    </form>
+    <Background>
+      <Container src={background} />
+      <SingupFrom>
+        <InputLabel
+          className="email"
+          type="email"
+          placeholder="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <InputLabel
+          className="useName"
+          type="text"
+          placeholder="name"
+          value={userName}
+          onChange={(e) => setUserName(e.target.value)}
+        />
+        <InputLabel
+          className="password"
+          type="password"
+          placeholder="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <InputLabel
+          className="phone"
+          type="tel"
+          placeholder="phoneNum"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+        />
+        <InputLabel
+          className="kakao"
+          type="text"
+          placeholder="kakao Id"
+          value={kakao}
+          onChange={(e) => setKakao(e.target.value)}
+        />
+        <InputLabel
+          className="facebook"
+          type="text"
+          placeholder="facebook"
+          value={facebook}
+          onChange={(e) => setFaceBook(e.target.value)}
+        />
+      </SingupFrom>
+      <SingupButton type="submit" onClick={onSubmit}>
+        Sing in
+      </SingupButton>
+    </Background>
   );
 };
 
