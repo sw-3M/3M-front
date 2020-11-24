@@ -1,14 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { createGlobalStyle } from "styled-components";
+import Global from "./GlobalStyle";
 import components from "./component";
-
-const Global = createGlobalStyle`
-body{
-  margin:0;
-  padding:0;
-
-}`;
 
 function App() {
   return (
@@ -17,6 +10,8 @@ function App() {
       <Switch>
         <Route path="/login" component={components.Login} />
         <Route path="/signup" component={components.Signup} />
+        <Route path="/main" component={components.Main} />
+        <Route path="/anonymous" component={components.Anonymous} />
       </Switch>
     </Router>
   );
