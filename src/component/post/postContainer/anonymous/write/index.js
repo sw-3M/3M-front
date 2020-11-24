@@ -12,7 +12,7 @@ import urls from "../../../../../api/urls";
 const Write = ({ setVisible }) => {
   const [title, setTitle] = useState();
   const [content, setContent] = useState();
-  const [file, setFIle] = useState();
+  const [file, setFile] = useState();
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -45,7 +45,9 @@ const Write = ({ setVisible }) => {
           type="file"
           accept="image/*"
           files={file}
-          onChange={(e) => setFIle(e.target.files[0])}
+          onChange={(e) => {
+            setFile(e.target.files[0]);
+          }}
         />
         <SubmitButton type="submit" onClick={onSubmit}>
           글 올리기
