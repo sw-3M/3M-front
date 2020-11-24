@@ -9,6 +9,7 @@ import {
   SingupButton,
 } from "./style";
 import background from "../../../../img/signupContainer.png";
+import { useHistory } from "react-router-dom";
 
 const Signup = () => {
   const [email, setEmail] = useState();
@@ -17,6 +18,8 @@ const Signup = () => {
   const [kakao, setKakao] = useState();
   const [facebook, setFaceBook] = useState();
   const [password, setPassword] = useState();
+
+  const history = useHistory();
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -29,7 +32,10 @@ const Signup = () => {
     if (kakao) data.append("kakao", kakao);
     if (facebook) data.append("facebook", facebook);
 
-    client.post(urls.SIGNUP, data).then(console.log).catch(console.log);
+    client
+      .post(urls.SIGNUP, data)
+      .then(history.push({ pathname: "/login" }))
+      .catch(console.log);
   };
 
   return (

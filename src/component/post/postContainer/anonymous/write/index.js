@@ -1,8 +1,15 @@
 import React, { setState, useState } from "react";
-import { Container, Content, Title, Image, SubmitButton } from "./style";
+import {
+  Container,
+  Content,
+  Title,
+  Image,
+  SubmitButton,
+  Overlay,
+} from "./style";
 import client from "../../../../../api";
 import urls from "../../../../../api/urls";
-const Write = () => {
+const Write = ({ setVisible }) => {
   const [title, setTitle] = useState();
   const [content, setContent] = useState();
   const [file, setFIle] = useState();
@@ -22,27 +29,30 @@ const Write = () => {
       .catch(alert("오류"));
   };
   return (
-    <Container>
-      <Title
-        placeholder="제목"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-      />
-      <Content
-        placeholder="내용"
-        value={content}
-        onChange={(e) => setContent(e.target.value)}
-      />
-      <Image
-        type="file"
-        accept="image/*"
-        files={file}
-        onChange={(e) => setFIle(e.target.files[0])}
-      />
-      <SubmitButton type="submit" onClick={onSubmit}>
-        글 올리기
-      </SubmitButton>
-    </Container>
+    <>
+      <Overlay onClick={(e) => setVisible(false)} />
+      <Container>
+        <Title
+          placeholder="제목"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
+        <Content
+          placeholder="내용"
+          value={content}
+          onChange={(e) => setContent(e.target.value)}
+        />
+        <Image
+          type="file"
+          accept="image/*"
+          files={file}
+          onChange={(e) => setFIle(e.target.files[0])}
+        />
+        <SubmitButton type="submit" onClick={onSubmit}>
+          글 올리기
+        </SubmitButton>
+      </Container>
+    </>
   );
 };
 

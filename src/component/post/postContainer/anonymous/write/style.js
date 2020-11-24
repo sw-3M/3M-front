@@ -1,12 +1,22 @@
 import styled from "styled-components";
 
+export const Overlay = styled.div`
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+`;
 export const Container = styled.div`
-  position: relative;
-  z-index: 999;
+  position: fixed;
+  z-index: 9999;
   width: 1000px;
   height: 600px;
 
-  top: 100px;
+  left: 300px;
+  top: 50px;
   margin: auto;
 
   background-color: white;
@@ -15,6 +25,10 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  input {
+    margin: 15px 0;
+  }
 `;
 export const Title = styled.input`
   border: none;

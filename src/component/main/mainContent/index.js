@@ -15,6 +15,10 @@ const Main = () => {
   const clickToLogin = () => {
     history.push({ pathname: "/login" });
   };
+  const clickToLogout = () => {
+    localStorage.removeItem("token");
+    window.location.reload();
+  };
   return (
     <MainWrapper>
       <MainHeader>
@@ -22,7 +26,14 @@ const Main = () => {
         <div className="center">
           <img src={mainlogo} className="logo"></img>
         </div>
-        {isLoggedIn || (
+        {isLoggedIn ? (
+          <div className="right">
+            <img src={test} className="test" />
+            <div className="btnBox">
+              <button onClick={clickToLogout}>Logout</button>
+            </div>
+          </div>
+        ) : (
           <div className="right">
             <img src={test} className="test" />
             <div className="btnBox">
@@ -41,7 +52,7 @@ const Main = () => {
               <span>광주SW마이스터고</span>
             </div>
             <Link to="/gsm">
-            <button>방문하기</button>
+              <button>방문하기</button>
             </Link>
           </div>
           <div className="choiceBox dsm">
@@ -52,7 +63,7 @@ const Main = () => {
               <span>대덕SW마이스터고</span>
             </div>
             <Link to="/dsm">
-            <button>방문하기</button>
+              <button>방문하기</button>
             </Link>
           </div>
           <div className="choiceBox dgsm">
@@ -63,7 +74,7 @@ const Main = () => {
               <span>대구SW마이스터고</span>
             </div>
             <Link to="/dgsm">
-            <button>방문하기</button>
+              <button>방문하기</button>
             </Link>
           </div>
         </div>

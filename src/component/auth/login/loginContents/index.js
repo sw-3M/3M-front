@@ -4,6 +4,7 @@ import client from "../../../../api";
 import urls from "../../../../api/urls";
 import bg from "../../../../img/background.png";
 import loginContainer from "../../../../img/loginContainer.png";
+import { useHistory } from "react-router-dom";
 import {
   Background,
   LoginContainer,
@@ -17,6 +18,7 @@ const Login = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
+  const history = useHistory();
   const onSubmit = (e) => {
     e.preventDefault();
     const data = {
@@ -26,7 +28,10 @@ const Login = () => {
 
     client
       .post(urls.LOGIN, data)
-      .then((res) => localStorage.setItem("token", res.data.token))
+      .then((res) => {
+        localStorage.setItem("token", res.data.token);
+        history.push({ pathname: "/" });
+      })
       .catch(console.log);
   };
 
