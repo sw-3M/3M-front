@@ -10,8 +10,11 @@ function App() {
       <Switch>
         <Route path="/login" component={components.Login} />
         <Route path="/signup" component={components.Signup} />
-        <Route path="/main" component={components.Main} />
+        <Route exact path="/" component={components.Main} />
         <Route path="/anonymous" component={components.Anonymous} />
+        <Route path="/gsm" component={components.Gsm} />
+        <Route path="/dgsm" component={components.Dgsm} />
+        <Route path="/dsm" component={components.Dsm} />
       </Switch>
     </Router>
   );

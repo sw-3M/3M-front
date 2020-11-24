@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { MainWrapper, MainHeader, MainContent } from "./Styled";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import mainlogo from "../../../img/logo_1.png";
 import test from "../../../img/test.png";
 import gsmLogo from "../../../img/gsm_logo.png";
@@ -18,6 +18,7 @@ const Main = () => {
   return (
     <MainWrapper>
       <MainHeader>
+        <div className="left"></div>
         <div className="center">
           <img src={mainlogo} className="logo"></img>
         </div>
@@ -39,7 +40,9 @@ const Main = () => {
               </div>
               <span>광주SW마이스터고</span>
             </div>
+            <Link to="/gsm">
             <button>방문하기</button>
+            </Link>
           </div>
           <div className="choiceBox dsm">
             <div className="schoolBox">
@@ -48,7 +51,9 @@ const Main = () => {
               </div>
               <span>대덕SW마이스터고</span>
             </div>
+            <Link to="/dsm">
             <button>방문하기</button>
+            </Link>
           </div>
           <div className="choiceBox dgsm">
             <div className="schoolBox">
@@ -57,7 +62,9 @@ const Main = () => {
               </div>
               <span>대구SW마이스터고</span>
             </div>
+            <Link to="/dgsm">
             <button>방문하기</button>
+            </Link>
           </div>
         </div>
       </MainContent>
