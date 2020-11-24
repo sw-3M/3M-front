@@ -1,9 +1,11 @@
 import React from "react";
-import { Background } from "./style";
+import { Background, Overlay } from "./style";
+import background from "../../../../img/background.png";
 const Anonymous = () => {
   return (
     <>
-      <Background />
+      <Background src={background} />
+      <Overlay />
     </>
   );
 };
