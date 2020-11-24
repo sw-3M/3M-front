@@ -22,58 +22,62 @@ const Main = () => {
   return (
     <MainWrapper>
       <MainHeader>
-        <div className="left"></div>
-        <div className="center">
-          <img src={mainlogo} className="logo"></img>
+        <div className='left'></div>
+        <div className='center'>
+          <img src={mainlogo} className='logo'></img>
         </div>
         {isLoggedIn ? (
-          <div className="right">
-            <img src={test} className="test" />
-            <div className="btnBox">
+          <div className='right'>
+            <Link to='/intro'>
+              <img src={test} className='test' />
+            </Link>
+            <div className='btnBox'>
               <button onClick={clickToLogout}>Logout</button>
             </div>
           </div>
         ) : (
-          <div className="right">
-            <img src={test} className="test" />
-            <div className="btnBox">
+          <div className='right'>
+            <Link to='/intro'>
+              <img src={test} className='test' />
+            </Link>
+            <div className='btnBox'>
               <button onClick={clickToLogin}>Login</button>
             </div>
           </div>
         )}
       </MainHeader>
       <MainContent>
-        <div className="container">
-          <div className="choiceBox gsm">
-            <div className="schoolBox">
-              <div className="logoBox">
-                <img src={gsmLogo} className="gsmLogo" />
+        <div className='container'>
+          <div className='choiceBox gsm'>
+            <div className='schoolBox'>
+              <div className='logoBox'>
+                <img src={gsmLogo} className='gsmLogo' />
               </div>
               <span>광주SW마이스터고</span>
             </div>
-            <Link to="/school:gsm">
+            <Link to='/school:gsm'>
               <button>방문하기</button>
             </Link>
           </div>
-          <div className="choiceBox dsm">
-            <div className="schoolBox">
-              <div className="logoBox">
-                <img src={dsmLogo} className="dsmLogo" />
+          <div className='choiceBox dsm'>
+            <div className='schoolBox'>
+              <div className='logoBox'>
+                <img src={dsmLogo} className='dsmLogo' />
               </div>
               <span>대덕SW마이스터고</span>
             </div>
-            <Link to="/school:dsm">
+            <Link to='/school:dsm'>
               <button>방문하기</button>
             </Link>
           </div>
-          <div className="choiceBox dgsm">
-            <div className="schoolBox">
-              <div className="logoBox">
-                <img src={dgsmLogo} className="dsmLogo" />
+          <div className='choiceBox dgsm'>
+            <div className='schoolBox'>
+              <div className='logoBox'>
+                <img src={dgsmLogo} className='dsmLogo' />
               </div>
               <span>대구SW마이스터고</span>
             </div>
-            <Link to="/school:dgsm">
+            <Link to='/school:dgsm'>
               <button>방문하기</button>
             </Link>
           </div>
