@@ -9,7 +9,7 @@ import post from "../../../img/bamboo.png";
 import { Link } from "react-router-dom";
 const Header = () => {
   const history = useHistory();
-  const [isLogin, setIsLogin] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);
   let pathname = window.location.pathname;
   console.log("pathname", pathname);
   return (
