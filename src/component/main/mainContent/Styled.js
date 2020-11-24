@@ -1,8 +1,9 @@
 import styled from "styled-components";
-import background from "../../img/background.png";
-import gsm from "../../img/gsm.png";
-import dsm from "../../img/dsm.png";
-import dgsm from "../../img/dgsm.png";
+import background from "../../../img/background.png";
+import gsm from "../../../img/gsm.png";
+import dsm from "../../../img/dsm.png";
+import dgsm from "../../../img/dgsm.png";
+import { Link } from "react-router-dom";
 
 const MainWrapper = styled.div`
   width: 100vw;
@@ -138,5 +139,5 @@ const MainContent = styled.div`
     }
   }
 `;
-
+const ToLogin = styled(Link)``;
 export { MainWrapper, MainHeader, MainContent };

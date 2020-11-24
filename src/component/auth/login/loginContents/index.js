@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import "./style.js";
 import client from "../../../../api";
 import urls from "../../../../api/urls";
-import bg from "../../../../image/background.png";
-import loginContainer from "../../../../image/loginContainer.png";
+import bg from "../../../../img/background.png";
+import loginContainer from "../../../../img/loginContainer.png";
 import {
   Background,
   LoginContainer,

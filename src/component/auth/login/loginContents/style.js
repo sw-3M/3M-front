@@ -18,7 +18,6 @@ export const Overlay = styled.div`
 `;
 
 export const LoginContainer = styled.img`
-  @import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
   font-family: "NanumSquare", sans-serif !important;
   font-style: "NanumSquare";
   position: absolute;

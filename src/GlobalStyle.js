@@ -2,6 +2,8 @@ import { createGlobalStyle } from "styled-components";
 
 const Global = createGlobalStyle`
 body{
+  margin:0;
+  padding:0;
     @font-face {
   font-family: NanumSquareWeb;
   src: local(NanumSquareR),

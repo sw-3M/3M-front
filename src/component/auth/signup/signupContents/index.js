@@ -8,7 +8,7 @@ import {
   InputLabel,
   SingupButton,
 } from "./style";
-import background from "../../../../image/signupContainer.png";
+import background from "../../../../img/signupContainer.png";
 
 const Signup = () => {
   const [email, setEmail] = useState();
