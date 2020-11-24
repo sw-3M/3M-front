@@ -1,25 +1,26 @@
-import React from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import { Main } from './Components'
+
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { createGlobalStyle } from "styled-components";
+import components from "./component";
 
-const GlobalStyle = createGlobalStyle`
-  @import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
-  *{
-    margin: 0px;
-    font-family: 'NanumSquare';
-  }
-`
+const Global = createGlobalStyle`
+body{
+  margin:0;
+  padding:0;
 
-const App = () => {
+}`;
+
+function App() {
   return (
-    <BrowserRouter>
-    <GlobalStyle></GlobalStyle>
+    <Router>
+      <Global />
       <Switch>
-        <Route exact path="/" component={Main}/>
+        <Route path="/login" component={components.Login} />
+        <Route path="/signup" component={components.Signup} />
       </Switch>
-    </BrowserRouter>
-  )
+    </Router>
+  );
 }
 
 export default App
