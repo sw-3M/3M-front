@@ -26,7 +26,7 @@ const Last = (props) => {
         <>
         <Global/>
         <Section>
-            {result}
+            <div>{result}</div>
         </Section>
         </>
     )

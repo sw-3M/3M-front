@@ -2,25 +2,127 @@ import styled,{keyframes,createGlobalStyle} from 'styled-components';
 // body tag
 export const Global = createGlobalStyle 
 `body {
-    width: 100%;
-    height: 100%;
+    width: 100%
+    height: 100%
     margin: 0 auto;
     .inner {
         width: 360px;
         height: 680px;
         margin: 0 auto;
+        padding-top: 150px;
     }
-}`
+}
+`
+export const AllPage = styled.section`
+    display:none;
+`
+export const FristPage = styled.section`
+    .box{
+        width: 558px;
+        height: 600px;
+        position: absolute;
+        background-color: #ffffff;
+        z-index: -1;
+        border-radius: 40px;
+        margin-left: 700px;
+        margin-top: 150px;
+    } 
+`
+export const Frist_text = styled.div`
+    display: block;
+    img {
+        width:269px;
+        height:150px;
+        margin-left: 830px;
+        margin-top: 200px;
+    }
+    div {
+        font-size: 22px;
+    }
+    .bold {
+        font-size: 30px;
+        font-weight: bold;
+    }
+    span {
+        color: #51ADCF;
+    }
+    .text {
+        margin-left: 820px;
+        margin-top: 40px;
+    }
+    .start {
+        width: 380px;
+        height: 100px;
+        background-color: #51ADCF;
+        margin-left: 800px;
+        margin-top: 30px;
+    }
+    .text1 {
+        font-size: 30px;
+        font-weight: bold;
+        line-height: 100px;
+        color: #ffffff; 
+        text-align: center;
+        margin-left: 130px;
+    }
+    
+`
+export const Footer = styled.section`
+    .bar {
+        width: 650px;
+        height: 30px;
+        border: 2px solid rgba(0, 0, 0, 0.45);
+        border-radius: 100px;
+        position: absolute;
+        margin-left:660px;
+        margin-top: 85px;
+        z-index:2;
+    }
+`
+export const GageBar = styled.div`
+    width: ${pros=>pros.width===0?0:(pros.width+1)*130}px;
+    height: 30px;
+    border-radius: 100px;
+    position: absolute;
+    background-color: #ffffff;
+    transition-duration: 1s;
+    margin-left:660px;
+    margin-top: 85px;
+` 
 
+export const Bycicle = styled.div`
+    background-image: url('./img/bycicle.png');
+    img {
+        margin-left: ${pros=>pros.width===0?620:(pros.width)*130+750}px;
+        width: 72px;
+        height: 72px;
+        position: absolute;
+        transition-duration: 1s;
+        margin-top: 45px;
+    }
+`
+
+export const Background = styled.div`
+    img {
+        margin-left: -${pros=>pros.width===0?0:(pros.width)*1920}px;
+        z-index: -1;
+        position: absolute;
+        transition-duration: 1s;
+        height: 100%;
+    }
+`
 export const Title = styled.header`
     // title tag
-    margin-top: 125px;
+    padding-top: 50px;
     .revised {
-        color: rgba(0, 0, 0, 0.3);
-        font-size: 17px;
-        margin: 15px 0;
+        color: #EEB17C;
+        font-size: 52px;
+        font-weight:bold;
+        padding-bottom: 50px;
+        margin-left: 170px
     }
     .question {
+        padding-bottom: 50px;
         font-size: 25px;
         font-weight: bolder;
     }
@@ -38,71 +140,15 @@ export const Content = styled.section`
         width: 360px;
         height: 100px;
         border: 1px solid rgba(0, 0, 0, 0.3);
+        background-color: #ffffff;
         border-radius: 5px;
         margin: 10px 0;
     }
 `
 export const Choice = styled.section`
-    width: 150px;
-    height: 20px;
     display: flex;
     .rocket {
-        width: 100%;
-        height: 30px;
-    }
-    img {
-        width: 30px;
-        height: 20px;
-        position: absolute;
-    }
-    .rocket-text {
-        font-size: 12.5px;
-        margin-left: 30px;
-        color: rgba(0, 0, 0, 0.45);
-        line-height: 1px;
-    }
-    .counting {
-        position: absolute;
-        padding-left: 270px;
-        margin-top: -30px;
-        width: 200px;
-        font-size: 13px;
-    }
-`
-
-export const Footer = styled.section`
-    .bar {
-        width: 370px;
-        height: 10px;
-        margin: 5px 3px;
-        border: 1px solid rgba(0, 0, 0, 0.45);
-        border-radius: 100px;
-    }
-`
-export const GageBar = styled.div`
-    width: ${pros=>pros.width===0?74:(pros.width+1)*74}px;
-    height: 10px;
-    margin: -17px 3px;
-    border: 1px solid rgba(0, 0, 0, 0.45);
-    border-radius: 100px;
-    position: flex;
-    background-color: rgba(0, 0, 0, 0.3);
-    transition-duration: 1s;
-` 
-const Ani =({x}) =>keyframes`
-    1% {
-        width: 125px;
-    }
-    20% {
-        width: 187.5px;
-    }
-    40% {
-        width: 250px;
-    }
-    60% {
-        width: 312.5px;
-    }
-    80% {
-        width: 370px;
+        width: 72px;
+        height: 72px;
     }
 `
