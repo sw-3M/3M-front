@@ -1,0 +1,42 @@
+[
+    {
+        "question" : "1111가 어떤 값일까요?",
+        "choice": ["4","15"],
+        "index" : "1"
+    },
+    {
+        "question" : "console.log(b+a+ +n+a).toLowerCase());",
+        "choice": ["바나나","사과"],
+        "index" : "0"
+    },
+    {
+        "question" : "개발자에게 '우유 2개 사 와, 그리고 빵 있으면 4개 사 와'라고 심부름을 시키면 개발자가 사 오는 우유의 개수는?",
+        "choice": ["2","4"],
+        "index" : "1"
+    },
+    {
+        "question" : "Life is short, you need ()에 들어갈 프로그래밍 언어는?",
+        "choice": ["Javascript","Python"],
+        "index" : "0"
+    },
+    {
+        "question" : "빌 게이츠가 부드러운걸 만드는 도구는?",
+        "choice": ["마이크","코딩"],
+        "index" : "0"
+    }, 
+    {
+        "question" : "스누피 + 몬스터 + 핫식스 = ?",
+        "choice": ["5000","397"],
+        "index" : "1"
+    }, 
+    {
+        "question" : "당신이 생각하는 상속의 또다른 말은?",
+        "choice": ["세습","확장"],
+        "index" : "1"
+    },
+    {
+        "question" : "개발자 2명이 자리를 바꾸는데 사용되는 의자는?",
+        "choice": ["0","3"],
+        "index" : "1"
+    }
+]
