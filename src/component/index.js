@@ -2,6 +2,7 @@ import { Login } from "./auth/login";
 import { Signup } from "./auth/signup";
 import { Main } from "./main";
 import { Anonymous } from "./post";
+import Intro  from "./intro";
 import {School} from "./school";
 import {Club} from "./school";
 import {QnA} from './school'
@@ -12,6 +13,7 @@ const components = {
   Signup,
   Main,
   Anonymous,
+  Intro,
   School,
   Club,
   QnA,
