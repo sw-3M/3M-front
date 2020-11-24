@@ -1,5 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Test } from './component/test';
+import { Last } from './component/test'; 
+import { Main } from './component/test'; 
 import Global from "./GlobalStyle";
 import components from "./component";
 
@@ -7,7 +10,9 @@ function App() {
   return (
     <Router>
       <Global />
-      <Switch>
+      <Switch> <Route path="/Test" component={Test}/>
+      <Route path="/Last" component={Last}/>
+      <Route path="/First" component={Main}/>
         <Route path="/intro" component={components.Intro} />
         <Route path='/login' component={components.Login} />
         <Route path='/signup' component={components.Signup} />
