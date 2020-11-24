@@ -23,37 +23,37 @@ const Test = () => {
         const tmp=data.filter((e,i)=>{if(i !== randInt)return e;});
         setData(tmp);
     };
-    const [result,setResult] = useState('');
-            useEffect(() => {
-            switch(score){
-                case 0:
-                case 1:
-                    setResult('프알못');
-                    break;
-                case 2:
-                case 3:
-                    setResult('프린이');
-                    break;
-                case 4:
-                case 5:
-                setResult('천성적인 개발자');
+    const conuting = () => {
+        switch(score){
+            case 0:
+            case 1:
+                alert('프알못');
                 break;
+            case 2:
+            case 3:
+                alert('프린이');
+                break;
+            case 4:
+            case 5:
+                alert('천성적인 개발자');
+            break;
             default:
         }
-    },[])
+    } 
+    
     const onclick = (e) => {
         if(e.target.id == question.index){
-            setscore(score);
+            setscore(score+1);
             console.log(score);
+        }
+        if(counter > 4){
+            console.log('end');
+            conuting();
+            window.history.back();
+            return;
         }
         rand_question();
         setCounter(counter+1);
-        if(counter > 4){
-            console.log('end');
-            alert(result);
-            return;
-            window.history.back();
-        }
     }
     useEffect(()=>{rand_question();},[]);
 
@@ -109,7 +109,7 @@ const Test = () => {
                 <div id="0">{question&& question.choice[0]}</div>
                 </div>
                 <div className="question_2 box text gage" onClick={onclick}>
-                <div id="1">{question&& question.choice[1]}</div>
+                <div id="1" >{question&& question.choice[1]}</div>
                 </div>
             </Content>
             {/* 게이지 */}

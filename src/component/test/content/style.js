@@ -129,7 +129,9 @@ export const Title = styled.header`
 `
 
 export const Content = styled.section`
-    margin: 40px 0;
+    width:400px;
+    height:250px;
+    position: absolute;
     .text {
         font-size: 20px;
         line-height: 100px;
@@ -143,6 +145,13 @@ export const Content = styled.section`
         background-color: #ffffff;
         border-radius: 5px;
         margin: 10px 0;
+    }
+    .gage:hover {
+        transition:0.3s;
+        background-color: rgba(254, 178, 178, 0.6);
+    }
+    #0, #1 {
+        font-weight: bold;
     }
 `
 export const Choice = styled.section`
