@@ -16,3 +16,17 @@ export const Overlay = styled.div`
   background-color: rgba(255, 255, 255, 0.4);
   z-index: 998;
 `;
+
+export const PostContainer = styled.div`
+  width: 1000px;
+  height: 800px;
+  position: relative;
+  overflow-y: scroll;
+  z-index: 999;
+`;
+export const Posts = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 2000;
+`;
