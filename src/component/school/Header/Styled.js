@@ -6,6 +6,7 @@ export const HeaderWrapper = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  box-shadow: 2px 2px rgba(0,0,0,0.16);
   .iconBox {
     width: 50%;
     height: -webkit-fill-available;
