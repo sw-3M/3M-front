@@ -13,7 +13,10 @@ const Login = () => {
       password: password,
     };
 
-    client.post(urls.LOGIN, data).then(console.log).catch(console.log);
+    client
+      .post(urls.LOGIN, data)
+      .then((res) => localStorage.setItem("token", res.data.token))
+      .catch(console.log);
   };
 
   return (
