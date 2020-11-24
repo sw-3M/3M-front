@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./style.scss";
+import "./style.js";
 import client from "../../../../api";
 import urls from "../../../../api/urls";
 const Login = () => {
